@@ -32,7 +32,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       //prompt: req.body.question,
-      prompt: `Actúa como si fueras un experto en psicologia, tratame de una manera amigable y comprensiva, con empatia y de manega amigable y de confianza. pasciente: ${req.body.question}`,
+      prompt: `Actúa como si fueras un experto en psicologia, tratame de una manera amigable y comprensiva, con empatia y de manega amigable y de confianza, pero con respuestas cortas y concisas. pasciente: ${req.body.question}`,
       //temperature: 0.6,
       //prompt:req.body.question,
       max_tokens: 500,
