@@ -1,4 +1,4 @@
-# OpenAI psicology app
+# OpenAI psychology app
 
 
 ## Setup
