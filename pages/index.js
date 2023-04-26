@@ -27,7 +27,6 @@ export default function Home() {
   //   question: "",
   //   answer:""
   // });
-  alert('test')
 
  const handlerStart = ()=>{
   setStart(false)
