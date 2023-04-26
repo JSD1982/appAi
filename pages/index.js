@@ -93,8 +93,8 @@ export default function Home() {
       ) : (
         <>
           <Head>
-            <title>OpenAI Quickstart</title>
-            <link rel="icon" href="/chat.png" />
+            <title>OpenAI Psic</title>
+            <link rel="icon" href="/dog.png" />
           </Head>
 
           <main className={styles.main}>
