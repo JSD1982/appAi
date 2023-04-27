@@ -53,7 +53,7 @@ export default function Home() {
         setResult(data.result);
         console.log(data.result);
      
-        speak({ text: data.result, voice, pitch, rate });
+        speak({ text: data.result, voices });
       
         setQuestionInput("");
 
