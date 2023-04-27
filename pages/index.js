@@ -20,9 +20,9 @@ export default function Home() {
  
   const [result, setResult] = useState();
   const { speak, voices } = useSpeechSynthesis();
-  const voice = voices[1];
-  const rate = 1.2;
-  const pitch = 2;
+  // const voice = voices[1];
+  // const rate = 1.2;
+  // const pitch = 2;
   // const [conversationHistory, setConversationHistory] = useState({
   //   question: "",
   //   answer:""
@@ -30,7 +30,7 @@ export default function Home() {
 
  const handlerStart = ()=>{
   setStart(false)
-  speak({ text: `Hola ${name}, como estas?`, voice, pitch, rate });
+  speak({ text: `Hola ${name}, como estas?`, voices });
  }
 
     async function callMe() {
