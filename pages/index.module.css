@@ -13,57 +13,92 @@
   font-weight: bold;
   font-style: normal;
 }
-.app-content{
-  padding: 20px;
+.bodyContent{
+     height: 95vh;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 6px;
+    box-shadow: 0px 0px 27px 0 #3333331f;
+
+
 }
-.main,
-.main input {
-  font-size: 16px;
+.appContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px;
+    
+    margin: auto;
+    border-radius: 9px;
+}
+.appContent,
+.appContent input {
+  font-size: 15px;
   line-height: 24px;
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
-.main {
+.appContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
+  max-width: 500px;
+  margin: auto;
 }
-.main .icon {
+.appContent .icon {
   width: 34px;
 }
-.main h3 {
-  font-size: 32px;
+.appContent h3 {
+  font-size: 20px;
   line-height: 40px;
-  font-weight: bold;
-  color: #202123;
-  margin: 16px 0 40px;
-  text-transform: uppercase;
+  font-weight: 100;
+  color: #747474;
+  margin: 16px 0 10px;
+  text-transform: capitalize;
 }
-.main form {
+.appContent h3 span{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #acacac;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  top: 12px;
+  margin-right: 10px;
+}
+.appContent h3 span img{
+      width: 100%;
+}
+.appContent form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 768px;
 }
-.main input[type="text"] {
+.appContent input[type="text"] {
   padding: 12px 16px;
-  border: 1px solid #10a37f;
+  border: 1px solid #0052aa;
   box-sizing: border-box;
   border-radius: 4px;
   margin-bottom: 24px;
-  outline-color: #10a37f;
+  outline-color: #0052aa;
   width: 100%;
   margin:20px auto;
 }
-.main ::placeholder {
+.appContent ::placeholder {
   color: #8e8ea0;
   opacity: 1;
 }
-.main input[type="submit"] {
+.appContent input[type="submit"] {
     padding: 12px 0;
     color: #fff;
-    border: 1px solid #10a37f;
+    border: 1px solid #0052aa;
     border-radius: 4px;
     text-align: center;
     cursor: pointer;
@@ -71,19 +106,56 @@
     width: 65px;
     margin: auto;
 }
-.main .result {
+.appContent .result {
   font-weight: bold;
-  margin-top: 40px;
+    margin-top: 40px;
+    background: #f2f2f2;
+    border-radius: 8px;
+    padding: 22px;
+    font-size: 15px;
 }
-.main table, .main tr, .main td {
+.appContent table, .appContent tr, .appContent td {
     border: 1px solid #333;
     width: 100%;
     border-radius: 7px;
     margin: 20px;
     padding: 10px;
 }
-.main td{
+.appContent td{
   background: #ededed;
   font-weight: bold;
 }
-
+.appContent button{
+  padding: 10px 21px;
+    background: #0052aa;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+.appContent button:hover{
+  background: #014996;
+}
+.main, .startContainer{
+  width: 100%;
+}
+.startContainer{
+  width: 100%;
+}
+.startContainer img{
+      margin: auto;
+    display: block;
+    box-shadow: 1px 1px 52px 4px #B0B0D3;
+    border-radius: 50%;
+    margin-bottom: 29px;
+}
+.startContainer button{
+  margin: auto;
+  display: block;
+}
+.loader{
+  width: 89px;
+  margin: 50px auto;
+  display: block;
+}

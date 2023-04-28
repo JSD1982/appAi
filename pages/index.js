@@ -9,6 +9,7 @@ import {
 export default function Home() {
   const [start, setStart] = useState(true);
   const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
   const [question, setQuestionInput] = useState("");
   
   //const [value, setValue] = useState('');
@@ -51,6 +52,7 @@ export default function Home() {
         }
 
         setResult(data.result);
+        setLoading(false);
         console.log(data.result);
      
         speak({ text: data.result, voices });
@@ -70,11 +72,13 @@ export default function Home() {
     setResult("");
     setQuestionInput("")
   }
-   const handlerStop = () => {
+   const handlerResponse = () => {
+    setLoading(true)
      setQuestionInput(stop);
+
      setTimeout(()=>{
       callMe(); 
-     },200)
+     },100)
      
      
      //setResult("");
@@ -84,48 +88,76 @@ export default function Home() {
   
   
   return (
-    <div className="app-content">
-      {start === true ? (
-        <>
-          <input value={name} onChange={(e) => setName(e.target.value)} />
-          <button onClick={handlerStart}>empezar</button>
-        </>
-      ) : (
-        <>
-          <Head>
-            <title>OpenAI Psic</title>
-            <link rel="icon" href="/chat.png" />
-          </Head>
-
-          <main className={styles.main}>
-            {/* <img src="/dog.png" className={styles.icon} /> */}
-            <h3>Hablemos {name}</h3>
-
+    <div className={styles.bodyContent}>
+      <div className={styles.appContent}>
+        {start === true ? (
+          <div className={styles.startContainer}>
+            <img src="/chat.png" />
             <input
               type="text"
-              name="question"
-              placeholder="Dejanos tu pregunta?"
-              value={question}
-              onChange={(e) => setQuestionInput(e.target.value)}
+              value={name}
+              placeholder="Cual es tu nombre?"
+              onChange={(e) => setName(e.target.value)}
             />
+            <button onClick={handlerStart}>empezar</button>
+          </div>
+        ) : (
+          <>
+            <Head>
+              <title>OpenAI Psic</title>
+              <link rel="icon" href="/chat.png" />
+            </Head>
 
-            <button onMouseDown={handlerListen} onMouseUp={handlerStop}>
+            <main className={styles.main}>
+              {/* <img src="/dog.png" className={styles.icon} /> */}
+
+              <h3>
+                <span>
+                  <img src="/avatar.png" />
+                </span>
+                Hablemos <b>{name}</b>
+              </h3>
+
+              <input
+                autoFocus
+                type="text"
+                name="question"
+                placeholder="Dejame tu consulta..."
+                value={question}
+                onChange={(e) => setQuestionInput(e.target.value)}
+              />
+
+              {/* <button onMouseDown={handlerListen} onMouseUp={handlerResponse}>
               🎤
-            </button>
-            <button onClick={handlerStop}>Enviar</button>
+            </button> */}
+              <button onClick={handlerResponse}>Enviar</button>
 
-            {listening && <div>Microfono listo para hablar!</div>}
-            <div className={styles.result}>{result}</div>
-            {/* <div dangerouslySetInnerHTML={{ __html: result }} /> */}
-          </main>
-          <div>
-            {/* <textarea
+              {listening && <div>Microfono listo para hablar!</div>}
+              {loading ? (
+                <>
+                  <img src="/loader.gif" className={styles.loader} />
+                </>
+              ) : (
+                <>
+                  <div className={styles.result}>
+                    {result
+                      ? result
+                      : "Hola, en que te puedo ayudar " + name + "?"}
+                  </div>
+                </>
+              )}
+
+              {/* <div dangerouslySetInnerHTML={{ __html: result }} /> */}
+            </main>
+            <div>
+              {/* <textarea
           value={value}
           onChange={(event) => setValue(event.target.value)}
         /> */}
-          </div>
-        </>
-      )}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }

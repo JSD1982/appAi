@@ -32,7 +32,7 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       //prompt: req.body.question,
-      prompt: `Actúa como si fueras un experto en psicologia, tratame de una manera amigable y comprensiva, con empatia y de manega amigable y de confianza, pero con respuestas cortas y concisas. pasciente: ${req.body.question}`,
+      prompt: `¡Hola! Soy un psicólogo virtual y estoy aquí para ayudarte. ¿Tienes alguna pregunta que quieras hacerme o comentarme que te esta pasando? Si es así, por favor escríbela a continuación y estaré encantado de responderla. Si no, puedes simplemente comenzar a hablar conmigo y podemos explorar juntos cualquier problema o preocupación que tengas, las respuestas van a ser concisas y con muchas preguntas para que puedas reflexionar, respuestas concisas y cortas. pregunta:${req.body.question}.`,
       //temperature: 0.6,
       //prompt:req.body.question,
       max_tokens: 500,
