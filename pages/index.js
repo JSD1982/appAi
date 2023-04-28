@@ -75,17 +75,11 @@ export default function Home() {
    const handlerResponse = () => {
     setLoading(true)
      setQuestionInput(stop);
-
-     setTimeout(()=>{
-      callMe(); 
-     },100)
-     
-     
+     callMe(); 
      //setResult("");
     
    };
 
-  
   
   return (
     <div className={styles.bodyContent}>
