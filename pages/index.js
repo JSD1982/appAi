@@ -43,6 +43,7 @@ export default function Home() {
           },
           body: JSON.stringify({
             question: question,
+            name:name,
           }),
         });
 
@@ -120,11 +121,12 @@ export default function Home() {
                 value={question}
                 onChange={(e) => setQuestionInput(e.target.value)}
               />
-
-              {/* <button onMouseDown={handlerListen} onMouseUp={handlerResponse}>
-              🎤
-            </button> */}
-              <button onClick={handlerResponse}>Enviar</button>
+              <div className={styles.contentButton}>
+                <button onClick={handlerResponse}>Enviar</button>
+                <button onMouseDown={handlerListen} onMouseUp={handlerResponse}>
+                  <img src="/icono-microfono.svg" />
+                </button>
+              </div>
 
               {listening && <div>Microfono listo para hablar!</div>}
               {loading ? (
