@@ -22,7 +22,7 @@ export default function Home() {
   const [result, setResult] = useState();
   const { speak, voices } = useSpeechSynthesis();
  const voice = voices[62];
- console.log(0.2)
+ console.log(0.3)
   // const rate = 1.2;
   // const pitch = 2;
   // const [conversationHistory, setConversationHistory] = useState({
