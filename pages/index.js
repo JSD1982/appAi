@@ -21,8 +21,8 @@ export default function Home() {
  
   const [result, setResult] = useState();
   const { speak, voices } = useSpeechSynthesis();
- const voice = voices[60];
- console.log(0.4)
+ const voice = voices[61];
+ console.log(0.5)
   // const rate = 1.2;
   // const pitch = 2;
   // const [conversationHistory, setConversationHistory] = useState({
