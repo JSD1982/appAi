@@ -69,11 +69,11 @@ export default function Home() {
     }
 
   
-  const handlerListen = () =>{
-    setQuestionInput(listen)
-    setResult("");
-    setQuestionInput("")
-  }
+  // const handlerListen = () =>{
+  //   setQuestionInput(listen)
+  //   setResult("");
+  //   setQuestionInput("")
+  // }
    const handlerResponse = () => {
     setLoading(true)
      setQuestionInput(stop);
@@ -124,9 +124,9 @@ export default function Home() {
               />
               <div className={styles.contentButton}>
                 <button onClick={handlerResponse}>Enviar</button>
-                <button onMouseDown={handlerListen} onMouseUp={handlerResponse}>
+                {/* <button onMouseDown={handlerListen} onMouseUp={handlerResponse}>
                   <img src="/icono-microfono.svg" />
-                </button>
+                </button> */}
               </div>
 
               {listening && <div>Microfono listo para hablar!</div>}
