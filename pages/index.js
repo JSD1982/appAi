@@ -37,16 +37,20 @@ export default function Home() {
 
     async function callMe() {
       try {
-        const response = await fetch("/api/generate", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            question: question,
-            name:name,
-          }),
-        });
+        const response = await fetch(
+          "https://app-7zraksbo8-pachajsc.vercel.app/api/generate",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({
+              question: question,
+              name: name,
+            }),
+          }
+        );
 
         const data = await response.json();
         if (response.status !== 200) {

@@ -1,5 +1,15 @@
 import { Configuration, OpenAIApi } from "openai";
 
+const express = require("express");
+
+
+const app = express();
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
